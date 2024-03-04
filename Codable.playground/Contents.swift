@@ -25,15 +25,15 @@ let jsonData = """
 
 struct Weather: Codable {
     var city: String
-    var temperature: Double
+    var temperature: Int
     var condition: String
     var forecast: [Forecast]
 }
 
 struct Forecast: Codable{
     var day: String
-    var high: Double
-    var low: Double
+    var high: Int
+    var low: Int
     var condition: String
 }
 
@@ -43,11 +43,11 @@ do {
     
     for weathers in weather1.forecast {
         print("""
-----------------------------------------------
+---------------------------------------------
 The expected weather for this day: \(weathers.day)
 The expected high and low temp: \(weathers.high) , \(weathers.low)
 The expected condition of the day: \(weathers.condition)
-----------------------------------------------
+---------------------------------------------
 """)
     }
 } catch {
