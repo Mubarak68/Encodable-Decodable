@@ -39,7 +39,7 @@ struct Forecast: Codable{
 
 do {
     let weather1 = try JSONDecoder().decode(Weather.self, from: jsonData)
-    print("The city is: \(weather1.city)")
+    print("The city is \(weather1.city),temp:\(weather1.temperature),condition: \(weather1.condition)")
     
     for weathers in weather1.forecast {
         print("""
